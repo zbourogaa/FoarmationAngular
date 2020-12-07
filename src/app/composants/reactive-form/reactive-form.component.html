@@ -1,0 +1,51 @@
+<div class="container">
+    <h2>Formulaire</h2>
+    <form [formGroup]="personneForm" (ngSubmit)='afficherTout()'>
+        <div class="form-group">
+            Identifiant : <input class="form-control" type="number" formControlName="id">
+        </div>
+        <div class="form-group">
+            Nom : <input class="form-control" type="text" formControlName="nom">
+        </div>
+        <div class="form-group">
+            Prénom : <input class="form-control" type="text" formControlName="prenom">
+        </div>
+        <div formGroupName="adresse">
+            <h3 class="form-group">Adresse</h3>
+            <div class="form-group">
+                Rue : <input class="form-control" type="text" formControlName="rue">
+            </div>
+            <div class="form-group">
+                Ville : <input class="form-control" type="text" formControlName="ville">
+            </div>
+            <div class="form-group">
+                Code postal : <input class="form-control" type="text" formControlName="codePostal">
+            </div>
+        </div>
+
+        <div formArrayName="sports">
+            <h3>Sports </h3>
+            <button type=button (click)="ajouterSport()">
+                Ajouter sport
+            </button>
+            <div *ngFor="let sport of sports.controls; let i=index">
+                <div>
+                    Sport :
+                    <input type="text" [formControlName]="i">
+                    <button type="submit" class="btn btn-default" (click)="supprimerSport(i)">
+                        supprimer
+                    </button>
+                </div>
+            </div>
+        </div>
+        <button type='submit'>Envoyer</button>
+    </form>
+
+    <div *ngFor="let elt of personnes;">
+        {{ elt.num }} {{ elt.nom }}
+        <ol>
+            <li *ngFor="let subItem of elt.sports"> {{ subItem }} </li>
+        </ol>
+    </div>
+
+</div>
