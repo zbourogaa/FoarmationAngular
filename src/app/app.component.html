@@ -47,7 +47,9 @@
     <div *ngIf=isConnected()>
       <li ><a class="nav-link" (click)='logout()'> Logout</a></li>
     </div> 
-
+    <li class="nav-item" routerLinkActive=active>   
+      <a class="nav-link" routerLink='observable'> Observable </a>
+    </li> 
   </ul>
 
 

@@ -21,6 +21,7 @@ import { TitreComponent } from './composants/titre/titre.component';
 import { ChildComponent } from './composants/child/child.component';
 import { ParentComponent } from './composants/parent/parent.component';
 import { AuthComponent } from './composants/auth/auth.component';
+import { ObservableComponent } from './composants/observable/observable.component';
 
 
 
@@ -42,6 +43,7 @@ import { AuthComponent } from './composants/auth/auth.component';
     ChildComponent,
     ParentComponent,
     AuthComponent,
+    ObservableComponent,
     
     
   ],
